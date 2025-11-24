@@ -2,7 +2,7 @@
 
 client_id = "2660a4bcd7c253bdd12f53b3d4ec9602"
 name = "Metaobject-app"
-application_url = "https://curly-queens-admire.loca.lt"
+application_url = "https://shopify-metaobject-8sz2zeudq-shawkat-zamil-tanvirs-projects.vercel.app/"
 embedded = true
 
 [build]
@@ -25,4 +25,4 @@ api_version = "2026-01"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://shopify-metaobject-8sz2zeudq-shawkat-zamil-tanvirs-projects.vercel.app/api/auth" ]
