@@ -1,0 +1,28 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[Session] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [shop] NVARCHAR(1000) NOT NULL,
+    [accessToken] NVARCHAR(1000) NOT NULL,
+    [scope] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Session_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    CONSTRAINT [Session_pkey] PRIMARY KEY CLUSTERED ([id]),
+    CONSTRAINT [Session_shop_key] UNIQUE NONCLUSTERED ([shop])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH
